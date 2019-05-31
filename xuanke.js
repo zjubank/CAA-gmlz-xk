@@ -6,10 +6,14 @@
 // @author       You
 // @match        http://61.130.6.250:6379/gmlz/xsxk.aspx?xh=<studentID>&lb=A
 // @grant        none
+// @run-at document-start
 // ==/UserScript==
 
 (
     function xuanke() {
+        'use strict';
+        window.confirm = window.alert = function() {return ;}
+
         try{
             document.getElementById("/*courseID*/").checked = true;
             //document.getElementById("btnXK").click();
@@ -18,7 +22,8 @@
         catch(err){
             location.reload();
         }
-        var i = self.setInterval("xuanke()", 100)
+        var i = self.setInterval("xuanke()", 200)
+        // Your code here...
     }
 
 )();
